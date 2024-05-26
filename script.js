@@ -3,6 +3,7 @@ let content = document.getElementById("content");
 let temp = document.getElementById("temp");
 let weather = document.getElementById("weather");
 let clock = document.getElementById("clock");
+let weatherImage = document.getElementById("weatherImage");
 
 function getUserLocation() {
     if (navigator.geolocation) {
@@ -23,7 +24,7 @@ function getUserLocation() {
 
 function getWeatherData(userLat, userLong) {
     const apiKey = '33b5ddfd34760c18772d6c49dc91ae8c';
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${userLat}&lon=${userLong}&appid=${apiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${userLat}&lon=${userLong}&appid=${apiKey}&units=imperial`;
 
     fetch(url)
         .then(response => {
@@ -32,18 +33,21 @@ function getWeatherData(userLat, userLong) {
             }
             return response.json();
         })
-        .then(currWeatherData => {
+        .then((currWeatherData) => {
             console.log(currWeatherData);
-            displayWeatherData(currWeatherData);
+            updateWeatherData(currWeatherData);
         })
         .catch(err => console.error('Fetch error:', err));
 }
 
-function displayWeatherData(data) {
-    city.textContent = `City: ${data.name}`;
-    temp.textContent = `Temperature: ${data.main.temp} °C`;
-    weather.textContent = `Weather: ${data.weather[0].description}`;
-    clock.textContent = `Time: ${new Date(data.dt * 1000).toLocaleTimeString()}`;
+function updateWeatherData(data) {
+    city.innerText = data.name;
+    const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    const weatherImage = document.getElementById('weatherImage');
+    weatherImage.src = iconUrl;
+    // temp.innerText = `Temperature: ${data.main.temp}°F`;
+    // weather.innerText = `Weather: ${data.weather[0].main} - ${data.weather[0].description}`;
+    // content.innerText = `Pressure: ${data.main.pressure} hPa, Humidity: ${data.main.humidity}%`;
+    // You can also update other elements as needed, such as clock, wind speed, etc.
 }
-
 getUserLocation();

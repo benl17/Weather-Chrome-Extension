@@ -16,8 +16,8 @@
     "action": {
         "default_popup": "index.html",
         "default_icon": {
-            "64": "sunny_weather_icon.webp",
-            "128": "sunny_weather_icon.webp"
+            "64": "weather_app_icon1.png",
+            "128": "weather_app_icon1.png"
         }
     }
 }
