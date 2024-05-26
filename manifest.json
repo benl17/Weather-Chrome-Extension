@@ -1,0 +1,16 @@
+{
+    "name": "Weather & Clothes Suggestion Chrome Extension", 
+    "version": "1.0",
+    "description": "A chrome extension that displays the weather as well as what clothes you should probably wear to be most comfortable", 
+    "manifest_version": 3, 
+    "permissions": [
+        "geolocation"
+    ],
+    "icons": {
+        "64": "sunny_weather_icon.webp",
+        "128": "sunny_weather_icon.webp"
+    }, 
+    "action": {
+        "defaul_popup": "index.html"
+    }
+}
