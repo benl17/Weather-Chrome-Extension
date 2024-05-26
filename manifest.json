@@ -7,10 +7,17 @@
         "geolocation"
     ],
     "icons": {
-        "64": "sunny_weather_icon.webp",
-        "128": "sunny_weather_icon.webp"
+        "16": "weather_app_icon1.png",
+        "32": "weather_app_icon1.png",
+        "48": "weather_app_icon1.png",
+        "64": "weather_app_icon1.png",
+        "128": "weather_app_icon1.png"
     }, 
     "action": {
-        "defaul_popup": "index.html"
+        "default_popup": "index.html",
+        "default_icon": {
+            "64": "sunny_weather_icon.webp",
+            "128": "sunny_weather_icon.webp"
+        }
     }
 }
