@@ -21,3 +21,49 @@
     width: 200px;
     height: 200px;
 }
+
+#actualWeather {
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 36px;
+}
+
+#feelsLikeWeather {
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 36px;
+}
+
+#weatherDescription {
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 24px;
+}
+
+#windGusts {
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 24px;
+    color: black;
+}
+
+#windSpeed {
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 24px;
+    color: black;
+}
+
+#dateTime {
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 24px;
+    position: fixed;
+    bottom: 5px;
+}

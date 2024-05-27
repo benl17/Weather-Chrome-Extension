@@ -1,7 +1,11 @@
 let city = document.getElementById("city");
 let content = document.getElementById("content");
 let temp = document.getElementById("temp");
-let weather = document.getElementById("weather");
+let windGusts = document.getElementById("windGusts");
+let windSpeed = document.getElementById("windSpeed");
+let actualWeather = document.getElementById("actualWeather");
+let feelsLikeWeather = document.getElementById("feelsLikeWeather")
+let weatherDescription = document.getElementById("weatherDescription");
 let clock = document.getElementById("clock");
 let weatherImage = document.getElementById("weatherImage");
 
@@ -34,20 +38,26 @@ function getWeatherData(userLat, userLong) {
             return response.json();
         })
         .then((currWeatherData) => {
-            console.log(currWeatherData);
             updateWeatherData(currWeatherData);
         })
         .catch(err => console.error('Fetch error:', err));
 }
 
 function updateWeatherData(data) {
+    windSpeed.innerText = `Wind speed: ${data.wind.speed} mph`;
+    windGusts.innerText = `Wind gusts: ${data.wind.gust} mph`;
     city.innerText = data.name;
     const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     const weatherImage = document.getElementById('weatherImage');
     weatherImage.src = iconUrl;
-    // temp.innerText = `Temperature: ${data.main.temp}°F`;
-    // weather.innerText = `Weather: ${data.weather[0].main} - ${data.weather[0].description}`;
-    // content.innerText = `Pressure: ${data.main.pressure} hPa, Humidity: ${data.main.humidity}%`;
-    // You can also update other elements as needed, such as clock, wind speed, etc.
+    actualWeather.innerText = `Temperature: ${data.main.temp}°F`;
+    feelsLikeWeather.innerText = `Feels like: ${data.main.feels_like}°F`;
+    weatherDescription.innerText = data.weather[0].description;
+
+    let currentDate = new Date();
+    let dateString = currentDate.toLocaleDateString();
+    let timeString = currentDate.toLocaleTimeString();
+    let dateTime = document.getElementById("dateTime");
+    dateTime.innerText = `${dateString} ${timeString}`;
 }
 getUserLocation();
