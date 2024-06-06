@@ -44,20 +44,30 @@ function getWeatherData(userLat, userLong) {
 }
 
 function updateWeatherData(data) {
-    windSpeed.innerText = `Wind speed: ${data.wind.speed} mph`;
-    windGusts.innerText = `Wind gusts: ${data.wind.gust} mph`;
+    windSpeed.innerText = `Wind speed: ${data.wind.speed.toFixed(1)} mph`;
+    windGusts.innerText = `Wind gusts: ${data.wind.gust.toFixed(1)} mph`;
     city.innerText = data.name;
     const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     const weatherImage = document.getElementById('weatherImage');
     weatherImage.src = iconUrl;
-    actualWeather.innerText = `Temperature: ${data.main.temp}°F`;
-    feelsLikeWeather.innerText = `Feels like: ${data.main.feels_like}°F`;
+    actualWeather.innerText = `Temperature: ${data.main.temp.toFixed(0)}°F`;
+    feelsLikeWeather.innerText = `Feels like: ${data.main.feels_like.toFixed(0)}°F`;
     weatherDescription.innerText = data.weather[0].description;
 
+    // Update the time immediately when the script runs
     let currentDate = new Date();
     let dateString = currentDate.toLocaleDateString();
     let timeString = currentDate.toLocaleTimeString();
     let dateTime = document.getElementById("dateTime");
     dateTime.innerText = `${dateString} ${timeString}`;
+
+    // Then set an interval to update the time every second
+    setInterval(() => {
+        let currentDate = new Date();
+        let dateString = currentDate.toLocaleDateString();
+        let timeString = currentDate.toLocaleTimeString();
+        let dateTime = document.getElementById("dateTime");
+        dateTime.innerText = `${dateString} ${timeString}`;
+    }, 1000);
 }
 getUserLocation();
