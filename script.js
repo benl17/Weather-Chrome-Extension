@@ -8,6 +8,7 @@ let feelsLikeWeather = document.getElementById("feelsLikeWeather")
 let weatherDescription = document.getElementById("weatherDescription");
 let clock = document.getElementById("clock");
 let weatherImage = document.getElementById("weatherImage");
+let windDirection = document.getElementById("windDirection");
 
 function getUserLocation() {
     if (navigator.geolocation) {
@@ -44,6 +45,7 @@ function getWeatherData(userLat, userLong) {
 }
 
 function updateWeatherData(data) {
+    console.log(data);
     windSpeed.innerText = `Wind speed: ${data.wind.speed.toFixed(1)} mph`;
     windGusts.innerText = `Wind gusts: ${data.wind.gust.toFixed(1)} mph`;
     city.innerText = data.name;
@@ -53,6 +55,9 @@ function updateWeatherData(data) {
     actualWeather.innerText = `Temperature: ${data.main.temp.toFixed(0)}°F`;
     feelsLikeWeather.innerText = `Feels like: ${data.main.feels_like.toFixed(0)}°F`;
     weatherDescription.innerText = data.weather[0].description;
+    const windDeg = data.wind.deg;
+    const windDirection = document.getElementById('windDirection');
+    windDirection.style.transform = `rotate(${windDeg}deg)`;
 
     // Update the time immediately when the script runs
     let currentDate = new Date();

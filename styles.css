@@ -67,3 +67,9 @@
     position: fixed;
     bottom: 5px;
 }
+
+#windDirection div {
+    display: inline-block;
+    font-size: 2em;
+    transform-origin: center center;
+}
