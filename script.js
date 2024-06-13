@@ -45,9 +45,6 @@ function getWeatherData(userLat, userLong) {
 }
 
 function updateWeatherData(data) {
-    console.log(data);
-    windSpeed.innerText = `Wind speed: ${data.wind.speed.toFixed(1)} mph`;
-    windGusts.innerText = `Wind gusts: ${data.wind.gust.toFixed(1)} mph`;
     city.innerText = data.name;
     const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     const weatherImage = document.getElementById('weatherImage');
@@ -74,5 +71,7 @@ function updateWeatherData(data) {
         let dateTime = document.getElementById("dateTime");
         dateTime.innerText = `${dateString} ${timeString}`;
     }, 1000);
+    windSpeed.innerText = `Wind speed: ${data.wind.speed.toFixed(1)} mph`;
+    windGusts.innerText = `Wind gusts: ${data.wind.gust.toFixed(1)} mph`;
 }
 getUserLocation();
