@@ -12,7 +12,8 @@
 }
 
 .sunny {
-    background-color: #FFD700;
+    /* background-color: #FFD700; */
+    background-image: url('clear_weather2.jpg');
 }
 
 .cloudy {
@@ -21,15 +22,38 @@
 }
 
 .rainy {
-    background-color: #708090; 
+    background-image: url('rainy_weather3.avif');
+    /* background-color: #708090;  */
 }
+
+/* make it easier to see the text when its rainy */
+.rainy #actualWeather,
+.rainy #feelsLikeWeather,
+.rainy #windGusts,
+.rainy #windSpeed,
+.rainy #windDirection,
+.rainy #windDirection div,
+.rainy #dateTime,
+.rainy #weatherDescription {
+    color: white;
+}
+
 
 .snowy {
     background-color: #F0FFFF; 
 }
 
 .thunderstorm {
-    background-color: #778899;
+    background-image: url('thunderstorm2.webp');
+    /* background-color: #778899; */
+}
+
+/* make it easier to see the text when its a thunderstorm */
+.thunderstorm #dateTime, 
+.thunderstorm #windDirection,
+.thunderstorm #windDirection div,
+.thunderstorm #city {
+    color: white;
 }
 
 /* end of background options */

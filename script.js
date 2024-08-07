@@ -46,7 +46,7 @@ function getWeatherData(userLat, userLong) {
         .catch(err => console.error('Fetch error:', err));
 }
 
-function getBackgroundClass(description) {
+function backgroundImage(description) {
     if (description.includes('clear')) {
         return 'sunny';
     } else if (description.includes('cloud')) {
@@ -74,7 +74,7 @@ function updateWeatherData(data) {
     weatherDescription.innerText = data.weather[0].description; //weather description 
 
     //change background of extension based on the current weather
-    const bgClass = getBackgroundClass(data.weather[0].description);
+    const bgClass = backgroundImage(data.weather[0].description);
     container.className = ''; // Reset all classes
     container.classList.add(bgClass);
     
