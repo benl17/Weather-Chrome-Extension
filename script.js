@@ -45,16 +45,19 @@ function getWeatherData(userLat, userLong) {
 }
 
 function updateWeatherData(data) {
-    city.innerText = data.name;
-    const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    city.innerText = data.name; //city name
+    
+    const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`; //icon
     const weatherImage = document.getElementById('weatherImage');
     weatherImage.src = iconUrl;
-    actualWeather.innerText = `Temperature: ${data.main.temp.toFixed(0)}°F`;
-    feelsLikeWeather.innerText = `Feels like: ${data.main.feels_like.toFixed(0)}°F`;
-    weatherDescription.innerText = data.weather[0].description;
-    const windDeg = data.wind.deg;
-    const windDirection = document.getElementById('windDirection');
-    windDirection.style.transform = `rotate(${windDeg}deg)`;
+
+    actualWeather.innerText = `Temperature: ${data.main.temp.toFixed(0)}°F`; //temp
+    feelsLikeWeather.innerText = `Feels like: ${data.main.feels_like.toFixed(0)}°F`; //feels like
+    weatherDescription.innerText = data.weather[0].description; //weather description 
+    
+    const windDeg = data.wind.deg; //wind degree
+    const windDirection = document.getElementById('windDirection'); //wind direction
+    windDirection.style.transform = `rotate(${windDeg}deg)`; //wind arrow
 
     // Update the time immediately when the script runs
     let currentDate = new Date();
@@ -71,7 +74,8 @@ function updateWeatherData(data) {
         let dateTime = document.getElementById("dateTime");
         dateTime.innerText = `${dateString} ${timeString}`;
     }, 1000);
-    windSpeed.innerText = `Wind speed: ${data.wind.speed.toFixed(1)} mph`;
-    windGusts.innerText = `Wind gusts: ${data.wind.gust.toFixed(1)} mph`;
+
+    windSpeed.innerText = `Wind speed: ${data.wind.speed.toFixed(1)} mph`; //wind speed
+    windGusts.innerText = `Wind gusts: ${data.wind.gust.toFixed(1)} mph`; //wind gusts
 }
 getUserLocation();
