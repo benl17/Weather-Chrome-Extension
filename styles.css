@@ -2,10 +2,38 @@
 #container {
     width: 400px;
     height: 550px;
-    background-color: #87CEEB;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
+
+/* Background options */
+.default {
+    /* background-color: #87CEEB; */
+}
+
+.sunny {
+    background-color: #FFD700; /* Gold */
+}
+
+.cloudy {
+    background-color: #B0C4DE; /* LightSteelBlue */
+}
+
+.rainy {
+    background-color: #708090; /* SlateGray */
+}
+
+.snowy {
+    background-color: #F0FFFF; /* Azure */
+}
+
+.thunderstorm {
+    background-color: #778899; /* LightSlateGray */
+}
+
+/* end of background options */
+
+/* extension text sytles */
 
 #city {
     font-family: "Kanit", sans-serif;
