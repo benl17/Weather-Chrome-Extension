@@ -12,23 +12,24 @@
 }
 
 .sunny {
-    background-color: #FFD700; /* Gold */
+    background-color: #FFD700;
 }
 
 .cloudy {
-    background-color: #B0C4DE; /* LightSteelBlue */
+    background-image: url('cloudy_image2.jpg');
+    /* background-color: #B0C4DE;  */
 }
 
 .rainy {
-    background-color: #708090; /* SlateGray */
+    background-color: #708090; 
 }
 
 .snowy {
-    background-color: #F0FFFF; /* Azure */
+    background-color: #F0FFFF; 
 }
 
 .thunderstorm {
-    background-color: #778899; /* LightSlateGray */
+    background-color: #778899;
 }
 
 /* end of background options */
