@@ -8,7 +8,7 @@
 
 /* Background options */
 .default {
-    /* background-color: #87CEEB; */
+    background-color: #87CEEB;
 }
 
 .sunny {
@@ -34,7 +34,7 @@
 
 /* end of background options */
 
-/* extension text sytles */
+/* extension text styles */
 
 #city {
     font-family: "Kanit", sans-serif;
@@ -97,7 +97,16 @@
     bottom: 5px;
 }
 
+#windDirection {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    font-size: 1.25rem;
+}
+
 #windDirection div {
+    margin-left: .5rem;
     display: inline-block;
     font-size: 2em;
     transform-origin: center center;

@@ -9,6 +9,7 @@ let weatherDescription = document.getElementById("weatherDescription");
 let clock = document.getElementById("clock");
 let weatherImage = document.getElementById("weatherImage");
 let windDirection = document.getElementById("windDirection");
+let windArrow = document.getElementById("windArrow");
 let container = document.getElementById("container");
 
 function getUserLocation() {
@@ -78,17 +79,16 @@ function updateWeatherData(data) {
     container.classList.add(bgClass);
     
     const windDeg = data.wind.deg; //wind degree
-    const windDirection = document.getElementById('windDirection'); //wind direction
-    windDirection.style.transform = `rotate(${windDeg}deg)`; //wind arrow
+    windArrow.style.transform = `rotate(${windDeg}deg)`; //wind arrow
 
-    // Update the time immediately when the script runs
+    // update the time every second
     let currentDate = new Date();
     let dateString = currentDate.toLocaleDateString();
     let timeString = currentDate.toLocaleTimeString();
     let dateTime = document.getElementById("dateTime");
     dateTime.innerText = `${dateString} ${timeString}`;
 
-    // Then set an interval to update the time every second
+    // start the interval for every second 
     setInterval(() => {
         let currentDate = new Date();
         let dateString = currentDate.toLocaleDateString();
@@ -96,8 +96,6 @@ function updateWeatherData(data) {
         let dateTime = document.getElementById("dateTime");
         dateTime.innerText = `${dateString} ${timeString}`;
     }, 1000);
-
-    
 
     windSpeed.innerText = `Wind speed: ${data.wind.speed.toFixed(1)} mph`; //wind speed
     windGusts.innerText = `Wind gusts: ${data.wind?.gust?.toFixed(1) ?? 'N/A'} mph`; //wind gusts
