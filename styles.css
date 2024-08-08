@@ -13,16 +13,16 @@
 
 .sunny {
     /* background-color: #FFD700; */
-    background-image: url('clear_weather2.jpg');
+    background-image: url('assests/clear_weather2.jpg');
 }
 
 .cloudy {
-    background-image: url('cloudy_image2.jpg');
+    background-image: url('assests/cloudy_image2.jpg');
     /* background-color: #B0C4DE;  */
 }
 
 .rainy {
-    background-image: url('rainy_weather3.avif');
+    background-image: url('assests/rainy_weather3.avif');
     /* background-color: #708090;  */
 }
 
@@ -44,7 +44,7 @@
 }
 
 .thunderstorm {
-    background-image: url('thunderstorm2.webp');
+    background-image: url('assests/thunderstorm2.webp');
     /* background-color: #778899; */
 }
 
